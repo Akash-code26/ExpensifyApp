@@ -9,7 +9,9 @@
     "build:prod": "webpack -p --env production",
     "dev": " live-server public --watch",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "babel-loader": "^8.1.0",
     "enzyme-shallow-equal": "^1.0.4",
     "enzyme-to-json": "^3.5.0",
+    "express": "^4.17.1",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^0.10.0",
     "moment": "^2.27.0",
