@@ -12,7 +12,10 @@ if (process.env.NODE_ENV === 'test') {
 module.exports = (env) => {
     const isProduction = env === 'production'
     return {
-        entry: './src/app.js',
+        entry: [
+            './node_modules/core-js/stable',
+            './node_modules/regenerator-runtime/runtime.js',
+            './src/app.js'],
         output: {
             path: path.join(__dirname, 'public', 'dist'),
             filename: 'bundle.js'
@@ -41,7 +44,7 @@ module.exports = (env) => {
                     options: {
                         presets: [
                             "@babel/preset-env",
-                            "@babel/preset-react"
+                            "@babel/preset-react"  
                         ],
                         plugins: [
                             "@babel/plugin-proposal-class-properties",
